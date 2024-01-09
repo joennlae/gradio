@@ -32,10 +32,8 @@
 
 	DOMPurify.addHook("afterSanitizeAttributes", function (node) {
 		if ("target" in node) {
-			if (is_external_url(node.getAttribute("href"))) {
-				node.setAttribute("target", "_blank");
-				node.setAttribute("rel", "noopener noreferrer");
-			}
+			node.setAttribute("target", "_blank");
+			node.setAttribute("rel", "noopener noreferrer");
 		}
 	});
 
